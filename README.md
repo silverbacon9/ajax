@@ -7,17 +7,17 @@
 
 ### 將專案 Clone 到本地電腦
 回到你個人帳號下的該專案頁面（網址應該是 https://github.com/你的帳號/專案名稱），執行以下指令：
-{
 請將網址替換成你自己 Fork 後的專案網址
+
 <pre>
 git clone https://github.com/你的帳號/專案名稱.git
 </pre>
-
 進入專案資料夾
 <pre>
 cd 專案名稱
 </pre>
-}
+
+
 
 
 ### 如何執行本專案
