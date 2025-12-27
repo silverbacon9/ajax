@@ -6,6 +6,10 @@ page_bp = Blueprint('page', __name__)
 def index():
     return render_template('index.html')
 
+@page_bp.route('/json')
+def json():
+    return render_template('json.html')
+
 @page_bp.route('/image')
 def image():
     return render_template('image.html')
