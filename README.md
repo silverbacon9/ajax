@@ -1,3 +1,25 @@
+### Fork 本專案
+1. 登入你的 GitHub 帳號。
+2. 在本專案頁面的右上方，找到並點擊 「Fork」 按鈕。
+3. 選擇你的個人帳號作為目的地。
+4. （選擇性）你可以修改 Repository name，例如加上你的學號或姓名。
+5. 點擊 Create fork。
+
+### 將專案 Clone 到本地電腦
+回到你個人帳號下的該專案頁面（網址應該是 https://github.com/你的帳號/專案名稱），執行以下指令：
+{
+請將網址替換成你自己 Fork 後的專案網址
+<pre>
+git clone https://github.com/你的帳號/專案名稱.git
+</pre>
+
+進入專案資料夾
+<pre>
+cd 專案名稱
+</pre>
+}
+
+
 ### 如何執行本專案
 1. 建立虛擬環境：`python -m venv venv`
 2. 啟動環境：`venv\Scripts\activate` (Windows)
