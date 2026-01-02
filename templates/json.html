@@ -18,23 +18,145 @@
     {% include '_navbar.html' %}
     <div class="container mt-3">
         <h3>JSON 練習</h3>
-        <div id="userList">
 
-        </div>
+
+
+        <table id="userList" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>電子郵件</th>
+                    <th>年紀</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Bob</td>
+                    <td>Bob@company.com</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Bob</td>
+                    <td>Bob@company.com</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Bob</td>
+                    <td>Bob@company.com</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Bob</td>
+                    <td>Bob@company.com</td>
+                    <td>30</td>
+                </tr> -->
+            </tbody>
+        </table>
+
+
+
+        <ul id="ul1">
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ul>
+
+        <select>
+            <option>aaa</option>
+        </select>
+
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
             crossorigin="anonymous"></script>
         <script src="/static/scripts/travel.js"></script>
         <script>
+
+
+            const theIL = document.querySelector('#ul1');
+
+
+
+
             const users = [
                 { "id": 1, "UserName": "Alice", "UserEmail": "alice@company.com", "age": 28 },
                 { "id": 2, "UserName": "Bob", "UserEmail": "bob@company.com", "age": 34 },
                 { "id": 3, "UserName": "Charlie", "UserEmail": "charlie@company.com", "age": 22 }]
 
+
+            // const data = { "users": users };
+            // // 找Bob的 age
+            // console.log(data.users[1].age);
+
+            // // const datas[索引值:value, 1:value, 2:value] = 陣列
+            // //datas[0]
+
+            // //users => [] => 陣列
+            // console.log(users[2]);
+
+            // // const obj = {"key":"value", "key":"value", "key":"value"} = 物件
+            // // obj.key1 = value1
+            // // obj["key2"] => value2
+            // console.log(user[0].UserName); //Alice
+            // console.log(user[0]["age"]); //28
+
+
+
             //如何讀取 users JSON 中的資料
             //如何將讀出的資料顯示在網頁上
+            console.log(users.length);
+            // for (let i = 0, max = users.length; i < max; i++) { } 
 
+
+
+            // array 物件提供的方法 forEach
+            //<li>Bob</li>
+
+            const theUl = document.querySelector('#ul1');
+            const tb = document.querySelector('#userList>tbody');
+
+            let lis = "";
+            let tds = "";
+            // 動態生成表格
+            // <tr>
+            //     <td>1</td>
+            //     <td>Bob</td>
+            //     <td>Bob@company.com</td>
+            //     <td>30</td>
+            // </tr>
+            users.forEach((user, index, array) => {
+                // console.log(index); // 0, 1, 2
+                // console.log(user); // 物件 {} {} {}
+                // console.log(user.id);
+                // console.log(user.UserName);
+                // console.log(user.UserEmail);
+                // console.log(user.age);
+                // `` 反單引號，可以在裡面用${} 表示變數或運算式
+                lis += `<li>${user.UserName}</li>`
+
+
+                // 解構賦值 
+                const { id, UserName, UserEmail, age } = user;
+
+                tds += `
+                    <tr>
+                        <td>${id}</td>
+                        <td>${UserName}</td>
+                        <td>${UserEmail}</td>
+                        <td>${age}</td>
+                    </tr>
+                `
+            })
+            console.log(lis);
+            // 如何將讀出的資料顯示在網頁上
+            theUl.innerHTML = lis;
+            tb.innerHTML = tds;
 
 
         </script>

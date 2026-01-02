@@ -5,7 +5,7 @@ class Items(Resource):
     def get(self):                                                # GET /items
         return {'message': '讀取所有資料'}, 200
     def post(self):    
-        data = request.get_json()
+        data = request.get_json()    # 接收client端傳過來的json資料
                                           # POST /items
         return {'message': f'新增{data["name"]},{data["email"]}'}, 201
 
